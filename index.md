@@ -1,6 +1,6 @@
-## Welcome to GitHub Pages
+## Esta es mi pagina de Ramsey 
 
-You can use the [editor on GitHub](https://github.com/SnowDife/Complementos/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+El principio de la teoria de Ramsey es que el desorden completo es imposible, es decir, en cualquier desorden hay partes ordenadas. 
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
