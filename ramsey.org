@@ -1,0 +1,86 @@
+#+title: Gráficas criticas de Ramsey
+
+#+property: header-args:ipython :session complementos :results raw drawer
+
+Estudiaremos las gráficas con ocho vértices cuyo número de clan es
+cuando mucho 3 y el número de clan de su complemento es cuando
+mucho 2. 
+
+#+begin_src ipython
+%matplotlib inline
+import networkx as nx
+import matplotlib.pyplot as plt
+from pycliques.lists import enlist_graphs
+#+end_src
+
+#+RESULTS:
+:results:
+# Out[6]:
+:end:
+
+#+begin_src ipython
+lista8=enlist_graphs(8)
+lista8g=[g for g in lista8 if nx.graph_clique_number(g)<=3 and nx.graph_clique_number(nx.complement(g))<=2]
+len(lista8g)
+#+end_src
+
+#+RESULTS:
+:results:
+# Out[20]:
+: 3
+:end:
+
+#+begin_src ipython
+[nx.number_of_edges(g) for g in lista8g]
+#+end_src
+
+#+RESULTS:
+:results:
+# Out[19]:
+: [16, 17, 18]
+:end:
+
+
+#+begin_src ipython
+plt.figure(figsize=(10, 3))
+
+for i in range(3):
+    index = 130+i+1
+    plt.subplot(index)
+    nx.draw(lista8g[i])
+
+plt.show()
+#+end_src
+
+#+RESULTS:
+:results:
+# Out[22]:
+[[file:./obipy-resources/21665VG.png]]
+:end:
+
+
+#+begin_src ipython
+complementos=[nx.complement(g) for g in lista8g ]
+#+end_src
+
+#+RESULTS:
+:results:
+# Out[23]:
+:end:
+
+#+begin_src ipython
+plt.figure(figsize=(10, 3))
+
+for i in range(3):
+    index = 130+i+1
+    plt.subplot(index)
+    nx.draw(complementos[i])
+
+plt.show()
+#+end_src
+
+#+RESULTS:
+:results:
+# Out[24]:
+[[file:./obipy-resources/2166GgM.png]]
+:end:
